@@ -11,8 +11,8 @@ interface Props {
 	separatorColor?: string
 	activeDotColor?: string
 	emptyDotColor?: string
-	dotHeight?: number;
-	dotWidth?: number;
+	dotHeight?: number
+	dotWidth?: number
 }
 
 export const Slider = ({
