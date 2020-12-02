@@ -11,6 +11,8 @@ interface Props {
 	separatorColor?: string
 	activeDotColor?: string
 	emptyDotColor?: string
+	dotHeight?: number;
+	dotWidth?: number;
 }
 
 export const Slider = ({
@@ -20,7 +22,9 @@ export const Slider = ({
 	separatorWidth =  0,
 	separatorColor = "#FFF",
 	activeDotColor= "#000",
-	emptyDotColor="#FFF"
+	emptyDotColor="#FFF",
+	dotHeight=10,
+	dotWidth=10,
 	
 
 }: Props) => {
@@ -35,7 +39,7 @@ export const Slider = ({
 				separatorColor={separatorColor}
 				separatorWidth={separatorWidth}
 			/>
-			<Pagination images={images} activeIndex={activeIndex} activeDotColor={activeDotColor} emptyDotColor={emptyDotColor}/>
+			<Pagination images={images} activeIndex={activeIndex} activeDotColor={activeDotColor} emptyDotColor={emptyDotColor} dotWidth={dotWidth} dotHeight={dotHeight} />
 		</View>
 	)
 }

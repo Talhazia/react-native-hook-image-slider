@@ -5,14 +5,16 @@ interface Props {
 	active: boolean
 	emptyDotColor: string
 	activeDotColor: string
+	dotWidth: number
+	dotHeight: number
 }
 
 // TODO change to something lightweight
-const Dot = ({ active, emptyDotColor, activeDotColor }: Props) => {
-	return <View style={[styles(emptyDotColor, activeDotColor).badge, active && styles(emptyDotColor, activeDotColor).active]} />
+const Dot = ({ active, emptyDotColor, activeDotColor, dotHeight, dotWidth }: Props) => {
+	return <View style={[styles(emptyDotColor, activeDotColor, dotHeight, dotWidth).badge, active && styles(emptyDotColor, activeDotColor, dotHeight, dotWidth).active]} />
 }
 
-const styles = (emptyDotColor: string, activeDotColor: string) => StyleSheet.create({
+const styles = (emptyDotColor: string, activeDotColor: string, dotWidth: number, dotHeight: number) => StyleSheet.create({
 	badge: {
 		borderRadius: 50,
 		borderColor: emptyDotColor,
@@ -21,6 +23,8 @@ const styles = (emptyDotColor: string, activeDotColor: string) => StyleSheet.cre
 		width: 20,
 		height: 20,
 		marginRight: 7,
+		dotWidth: dotWidth,
+		dotHeight: dotHeight,
 	},
 	active: {
 		backgroundColor: activeDotColor,
